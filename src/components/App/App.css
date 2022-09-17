@@ -13,3 +13,8 @@
   font-size: 1.5em;
 }
 
+.picturegrid {
+  display: inline-block;
+  margin: 50px;
+
+}
