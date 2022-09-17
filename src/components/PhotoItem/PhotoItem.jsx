@@ -5,9 +5,15 @@ import axios from 'axios';
 function PhotoItem({ picture, getPhotos }) {
     console.log(picture);
     let [likeCount, setLikeCount] = useState(0);
-    let [cardStatus, setCardStatus] = useState(false);
+    let [cardStatus, setCardStatus] = useState(true);
 
     const flipPhoto = () => {
+        console.log('clicked');
+        if (cardStatus === true) {
+            setCardStatus(false);
+        } else {
+            setCardStatus(true);
+        }
 
     };
 
@@ -29,15 +35,24 @@ function PhotoItem({ picture, getPhotos }) {
 
     return (
         <>
-            <div className="item">
-                <section className="polaroid">
-                    <img src={picture.path} />
-                    <p> here is the photo item</p>
 
-                    <div>
-                        <button onClick={() => handleLike(picture.id)}>❤️ Like</button>
-                        <span> Like Count: {picture.likes}</span>
-                    </div>
+            <div className="item">
+                <section className="polaroid" >
+                    {cardStatus ?
+                        <>
+                            <img src={picture.path} onClick={flipPhoto} />
+                            <p> here is the photo item</p>
+
+                            <div>
+                                <button onClick={() => handleLike(picture.id)}>❤️ Like</button>
+                                <span> Like Count: {picture.likes}</span>
+                            </div>
+                        </>
+
+
+                        :
+
+                        <p onClick={flipPhoto}>description</p>}
 
 
                 </section>
