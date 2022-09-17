@@ -12,6 +12,16 @@
 
 .polaroid>img {
     max-width: 100%;
-    height: auto;
+    height: 250px;
+    width: 250px;
     filter: grayscale(100%);
+
+}
+
+.item:before {
+    filter: grayscale(100%);
+}
+
+.polaroid>img:hover {
+    filter: none;
 }
