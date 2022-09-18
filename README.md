@@ -21,7 +21,7 @@ As a weekend assignment - we were tasked with using our newfound knowledge of Re
 ## Screen Shots
 
 Gallery List View:
-![](final product.png)
+![](finalproduct.png)
 
 Gallery Item View:
 ![](PhotoItem.png)
