@@ -36,23 +36,42 @@ function PhotoItem({ picture, getPhotos }) {
     return (
         <>
 
-            <div className="item">
-                <section className="polaroid" >
+            <div className="itemWrapper">
+                <section className="polaroid fade-in" >
                     {cardStatus ?
                         <>
-                            <img src={picture.path} onClick={flipPhoto} />
-                            <p> here is the photo item</p>
 
+                            <img src={picture.path} onClick={flipPhoto} />
+
+                            {/*  like counter button - that displays like count in button element */}
                             <div>
-                                <button onClick={() => handleLike(picture.id)}>❤️ Like</button>
-                                <span> Like Count: {picture.likes}</span>
+                                <button onClick={() => handleLike(picture.id)}>❤️ {picture.likes} Likes</button>
                             </div>
                         </>
 
 
-                        :
+                        : // TERNARY SWITCH 
 
-                        <p onClick={flipPhoto}>description</p>}
+                        <div className="descriptionMode">
+                            <div className="polaroidBack" onClick={flipPhoto}>
+                                <p>
+                                    <span>
+                                        {picture.title}
+                                    </span>
+                                    <br>
+                                        {/* yes i know it's bad but look it's just for line formatting it got funky if i used a div */}
+                                    </br>
+
+                                    {picture.description}
+                                </p>
+                            </div>
+                            <div>
+                                <button onClick={() => handleLike(picture.id)}>❤️ {picture.likes} Likes</button>
+                            </div>
+
+                        </div>
+                    }
+                    {/* TERNARY END */}
 
 
                 </section>

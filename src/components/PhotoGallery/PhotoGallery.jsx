@@ -5,7 +5,7 @@ function PhotoGallery({ allPhotos, getPhotos }) {
         <>
             {allPhotos.map(picture => (
                 <section className="picturegrid" key={[picture.id]}>
-                    <PhotoItem picture={picture} getPhotos={getPhotos} />
+                    <PhotoItem picture={picture} getPhotos={getPhotos} id="{picture.id}" />
                 </section>
 
             ))};
