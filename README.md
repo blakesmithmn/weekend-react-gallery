@@ -20,12 +20,9 @@ As a weekend assignment - we were tasked with using our newfound knowledge of Re
 
 ## Screen Shots
 
-Gallery List View:
+Gallery List View followed by Item View:
 ![](finalproduct.png)
-
-Gallery Item View:
 ![](PhotoItem.png)
-![](DescriptionView.png)
 
 
 ## Description & Approach
