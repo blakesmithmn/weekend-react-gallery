@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="App-title">Meaninful Moments</h1>
+        <h1 className="App-title">Meaningful Moments</h1>
         <p>(click for descriptions)</p>
       </header>
       <PhotoGallery allPhotos={allPhotos} getPhotos={getPhotos} />
