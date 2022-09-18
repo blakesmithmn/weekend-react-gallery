@@ -22,7 +22,7 @@ As a weekend assignment - we were tasked with using our newfound knowledge of Re
 
 Gallery List View followed by Item View:
 ![](finalproduct.png)
-![](PhotoItem.png)
+![](itemview.png)
 
 
 ## Description & Approach
