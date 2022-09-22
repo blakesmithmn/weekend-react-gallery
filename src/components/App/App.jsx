@@ -28,11 +28,10 @@ function App() {
 
   return (
     <div className="App">
-      <AppBar className="App-header">
+      <AppBar color="secondary" position="sticky">
         <h1 className="App-title">Meaningful Moments</h1>
-        <p>(click for descriptions)</p>
-      </AppBar>
-      <Container maxWidth='md'>
+      </AppBar >
+      <Container maxWidth='md' className="photoGallery">
         <PhotoGallery allPhotos={allPhotos} getPhotos={getPhotos} />
       </Container>
     </div>
