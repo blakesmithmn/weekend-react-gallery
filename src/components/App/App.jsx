@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import PhotoGallery from '../PhotoGallery/PhotoGallery.jsx'
+import Container from '@mui/material/Container'
+import AppBar from '@mui/material/AppBar';
+
 
 function App() {
   let [allPhotos, setAllPhotos] = useState([]);
@@ -25,11 +28,13 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <AppBar className="App-header">
         <h1 className="App-title">Meaningful Moments</h1>
         <p>(click for descriptions)</p>
-      </header>
-      <PhotoGallery allPhotos={allPhotos} getPhotos={getPhotos} />
+      </AppBar>
+      <Container maxWidth='md'>
+        <PhotoGallery allPhotos={allPhotos} getPhotos={getPhotos} />
+      </Container>
     </div>
   );
 }

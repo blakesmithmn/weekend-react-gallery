@@ -1,6 +1,14 @@
 import './PhotoItem.css';
 import { useState, setState } from 'react';
 import axios from 'axios';
+import Button from '@mui/material/Button';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import Paper from '@mui/material/Paper';
+import Fab from '@mui/material/Fab';
+import MoreVertRoundedIcon from '@mui/icons-material/MoreVertRounded';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
+
 
 function PhotoItem({ picture, getPhotos }) {
     console.log(picture);
@@ -37,16 +45,26 @@ function PhotoItem({ picture, getPhotos }) {
         <>
 
             <div className="itemWrapper">
-                <section className="polaroid fade-in" >
+                <Paper variant="outlined" elevation={3} className="polaroid fade-in" >
                     {cardStatus ?
                         <>
 
                             <img src={picture.path} onClick={flipPhoto} />
 
                             {/*  like counter button - that displays like count in button element */}
-                            <div>
-                                <button onClick={() => handleLike(picture.id)}>❤️ {picture.likes} Likes</button>
-                            </div>
+                            <ButtonGroup className="frontButtons">
+                                <Button aria-label="like" color="secondary" size="small">
+                                    <FavoriteIcon onClick={() => handleLike(picture.id)} />
+                                    {picture.likes} Likes
+
+                                </Button>
+                                {/* <Button variant="outlined" size="small" color="secondary" startIcon={<FavoriteIcon />} */}
+                                {/* onClick={() => handleLike(picture.id)}> */}
+                                {/* </Button> */}
+                                <Button size="small" >
+                                    <MoreVertRoundedIcon onClick={() => flipPhoto()} />
+                                </Button>
+                            </ButtonGroup>
                         </>
 
 
@@ -65,17 +83,27 @@ function PhotoItem({ picture, getPhotos }) {
                                     {picture.description}
                                 </p>
                             </div>
-                            <div>
-                                <button onClick={() => handleLike(picture.id)}>❤️ {picture.likes} Likes</button>
-                            </div>
+                            <ButtonGroup>
+                                <Button aria-label="like" color="secondary" size="small">
+                                    <FavoriteIcon onClick={() => handleLike(picture.id)} />
+                                    {picture.likes} Likes
+
+                                </Button>
+                                {/* <Button variant="outlined" size="small" color="secondary" startIcon={<FavoriteIcon />} */}
+                                {/* onClick={() => handleLike(picture.id)}> */}
+                                {/* </Button> */}
+                                <Button size="small" >
+                                    <MoreHorizRoundedIcon onClick={() => flipPhoto()} />
+                                </Button>
+                            </ButtonGroup>
 
                         </div>
                     }
                     {/* TERNARY END */}
 
 
-                </section>
-            </div>
+                </Paper>
+            </div >
 
 
         </>
