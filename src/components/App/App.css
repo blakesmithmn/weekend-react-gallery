@@ -17,5 +17,9 @@
 .picturegrid {
   display: inline-block;
   margin: 50px;
+}
 
+.photogallery {
+  margin-top: 150px;
+  margin-bottom: 50px;
 }
